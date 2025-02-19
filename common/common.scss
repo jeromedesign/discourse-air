@@ -155,8 +155,16 @@
   }
 }
 
-.not-found-container {
-  background-color: var(--secondary);
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  background: url("https://raw.githubusercontent.com/jeromedesign/gradient/refs/heads/main/background%20discoursv3.png")
+    no-repeat center center;
 }
 
 input[type="text"],
