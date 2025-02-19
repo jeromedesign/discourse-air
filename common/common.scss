@@ -597,3 +597,13 @@ a.powered-by-discourse,
 span.powered-by-discourse__content {
   background: transparent !important;
 }
+
+
+// ====================
+// Bug iOS fix: remove "fixed" on small screens
+// ====================
+@media screen and (max-width: 768px) {
+  body::before {
+    background-attachment: scroll !important;
+  }
+}
