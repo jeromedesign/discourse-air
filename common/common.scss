@@ -254,12 +254,9 @@ div.ac-wrap {
 html body #main-outlet {
   margin-top: 30px;
   margin-bottom: 50px;
-  background: var(--secondary);
   border-radius: 1em;
   padding: 3em 3em 5%;
   max-width: 1150px;
-  .home #main-outlet {
-  background: transparent !important;
   .archetype-regular & {
     min-height: 500px;
   }
