@@ -259,6 +259,13 @@ html body #main-outlet {
   border-radius: 1em;
   padding: 3em 3em 5%;
   max-width: 1150px;
+  body:not(.no-ember) {
+   background: none !important;
+   width: 100vw;
+   height: 100vh;
+   z-index: 1;
+  }
+}
   .archetype-regular & {
     min-height: 500px;
   }
