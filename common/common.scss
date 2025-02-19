@@ -155,16 +155,8 @@
   }
 }
 
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: -1;
-  background: url("https://raw.githubusercontent.com/jeromedesign/gradient/refs/heads/main/background%20discoursv3.png")
-    no-repeat center center;
+.not-found-container {
+  background-color: var(--secondary);
 }
 
 input[type="text"],
@@ -252,7 +244,7 @@ div.ac-wrap {
 }
 
 .timeline-container .topic-timeline .timeline-scrollarea {
-  border-left-color: var(--tertiary);
+  border-left-color: var(--secondary);
 }
 
 // graceful ish style
@@ -263,19 +255,24 @@ div.ac-wrap {
     0 1.63037px 3.62304px rgba(0, 0, 0, 0.0243888);
 }
 
-html {
-  body:not(.no-ember) {
-    background: linear-gradient(
-        0deg,
-        rgba(var(--primary-rgb), 0.075) 0%,
-        rgba(var(--primary-rgb), 0.075) 100%
-      ),
-      linear-gradient(0deg, var(--secondary) 100%, var(--secondary) 100%);
-  }
+// ==========================================================
+// Supprimé le background + .background-container du nouveau code
+// ==========================================================
 
-  body.no-ember .background-container {
-    display: none;
-  }
+html {
+  /* On retire la partie "body:not(.no-ember)" qui ajoutait le dégradé
+     et la .background-container bloc */
+  /* 
+    body:not(.no-ember) {
+      background: linear-gradient(...), linear-gradient(...);
+    }
+    .background-container {
+      ...
+    }
+    body.no-ember .background-container {
+      display: none;
+    }
+  */
 }
 
 html body #main-outlet {
@@ -577,11 +574,10 @@ html body #main-outlet {
   padding-left: 14px;
 }
 
-/* --------------------------------------------------------------------------------
-   CREER LE CALQUE DE FOND VIA PSEUDO-ELEMENT
-   -------------------------------------------------------------------------------- */
+// ==========================================================
+// Ajout de body::before pour le background image
+// ==========================================================
 
-/* On utilise body::before à la place d'un div .background-layer */
 body::before {
   content: "";
   position: fixed;
@@ -594,4 +590,10 @@ body::before {
     no-repeat center center;
   background-size: cover;
   background-attachment: fixed;
+}
+
+/* On NE rend transparent que le bas de page "Powered by Discourse" */
+a.powered-by-discourse,
+span.powered-by-discourse__content {
+  background: transparent !important;
 }
