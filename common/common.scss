@@ -253,7 +253,7 @@ div.ac-wrap {
 }
 
 html {
-  body:not(.no-ember) {
+  body.home:not(.no-ember) {
     background: none !important;
     width: 100vw;
     height: 100vh;
