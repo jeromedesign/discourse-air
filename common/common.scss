@@ -580,3 +580,22 @@ html body #main-outlet {
 .title-voting {
   padding-left: 14px;
 }
+
+/* --------------------------------------------------------------------------------
+   CREER LE CALQUE DE FOND VIA PSEUDO-ELEMENT
+   -------------------------------------------------------------------------------- */
+
+/* On utilise body::before à la place d'un div .background-layer */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  background: url("https://raw.githubusercontent.com/jeromedesign/gradient/refs/heads/main/background%20discoursv3.png")
+    no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+}
