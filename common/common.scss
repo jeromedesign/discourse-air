@@ -2,7 +2,7 @@
 .custom-search-banner-wrap {
   margin: 0 auto !important;
   max-width: unset;
-  color: var(--secondary);
+  color: var(--tertiary);
   h1 {
     line-height: var(--line-height-small);
     @include breakpoint("large", min-width) {
@@ -264,7 +264,7 @@ html {
 html body #main-outlet {
   margin-top: 30px;
   margin-bottom: 50px;
-  background: var(--tertiary);
+  background: var(--secondary);
   border-radius: 1em;
   padding: 3em 3em 5%;
   max-width: 1150px;
